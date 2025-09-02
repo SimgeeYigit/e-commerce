@@ -4,6 +4,7 @@ import Brands from "../layout/Brands";
 import Explore from "../components/Explore";
 import Products from "../components/Products";
 import Featured from "../components/Featured";
+import Service from "../components/Service";
 
 function HomePage() {
     return (
@@ -14,6 +15,7 @@ function HomePage() {
             <Explore />
             <Products />
             <Featured />
+            <Service />
         </>
     )
 }
