@@ -1,32 +1,72 @@
-import { Phone, Mail, Instagram, Youtube, Facebook, Twitter } from 'lucide-react';
+import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, User, Search, ShoppingCart, Heart, ChevronDown } from 'lucide-react';
+import ShopDropdown from './ShopDropDown';
 
 function Header() {
+
+
     return (
-        <header className='bg-[#252B42] h-[58px] flex items-center justify-between px-6'>
-            <div className='flex gap-2.5'>
-                <div className='header-text p-2.5 flex gap-x-[5px] items-center'>
-                    <Phone className="w-4 h-4" />
-                    <p>(225) 555-0118</p>
+        <header className='h-[136px]'>
+            <div className='bg-[#252B42] h-[58px] flex items-center justify-between px-6'>
+                <div className='flex gap-2.5'>
+                    <div className='header-text p-2.5 flex gap-x-[5px] items-center'>
+                        <Phone className="w-4 h-4" />
+                        <p>(225) 555-0118</p>
+                    </div>
+                    <a href="https://www.gmail.com" target="_blank">
+                        <div className='header-text p-2.5 flex gap-x-[5px] items-center'>
+                            <Mail className="w-4 h-4" />
+                            <p>michelle.rivera@example.com</p>
+                        </div>
+                    </a>
                 </div>
-                <div className='header-text p-2.5 flex gap-x-[5px] items-center'>
-                    <Mail className="w-4 h-4" />
-                    <p>michelle.rivera@example.com</p>
+
+                <p className='header-text '>Follow Us and get a chance to win 80% off</p>
+
+                <div className='header-text flex items-center gap-2.5 p-2.5'>
+                    <p>Follow Us :</p>
+                    <div className='flex gap-2.5 p-[5px]'>
+                        <a href='https://www.instagram.com' target="_blank"><Instagram className="w-4 h-4" /></a>
+                        <a href='https://www.youtube.com' target="_blank"><Youtube className="w-4 h-4" /></a>
+                        <a href='https://www.facebook.com' target="_blank"><Facebook className="w-4 h-4" /></a>
+                        <a href='https://www.twitter.com' target="_blank"><Twitter className="w-4 h-4" /></a>
+                    </div>
                 </div>
             </div>
 
-            <p className='header-text '>Follow Us and get a chance to win 80% off</p>
+            <nav className="bg-[#FFFFFF] flex items-center justify-between px-6 h-[58px] mt-3">
 
-            <div className='header-text flex items-center gap-2.5 p-2.5'>
-                <p>Follow Us :</p>
-                <div className='flex gap-2.5 p-[5px]'>
-                    <Instagram className="w-4 h-4" />
-                    <Youtube className="w-4 h-4" />
-                    <Facebook className="w-4 h-4" />
-                    <Twitter className="w-4 h-4" />
+                <h1 className='font-montserrat font-bold text-2xl pl-3.5 text-[#252B42] w-[187px]'>Bandage</h1>
+
+                <ul className='navbar-text flex gap-[15px] items-center'>
+                    <li>Home</li>
+                    <ShopDropdown />
+                    <li>About</li>
+                    <li>Blog</li>
+                    <li>Contact</li>
+                    <li>Pages</li>
+                </ul>
+
+                <div className='text-[#23A6F0] flex gap-4 items-center'>
+                    <div className='flex items-center gap-[5px] font-montserrat font-bold text-sm'>
+                        <User className="w-4 h-4"/>
+                        <p>Login / Register</p>
+                    </div>
+                    <Search className="w-4 h-4"/>
+                    <div className='flex items-center gap-1'>
+                        <ShoppingCart className="w-4 h-4"/>
+                        <p className='font-montserrat font-normal text-xs'>1</p>
+                    </div>
+                    <div className='flex items-center gap-1'>
+                        <Heart className="w-4 h-4"/>
+                        <p className='font-montserrat font-normal text-xs'>1</p>
+                    </div>
                 </div>
-            </div>
+            </nav>
+
         </header>
     )
 }
+
+
 
 export default Header;
