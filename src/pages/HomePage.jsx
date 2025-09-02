@@ -2,6 +2,7 @@ import Header from "../layout/Header";
 import Banner from "../components/Banner";
 import Brands from "../layout/Brands";
 import Explore from "../components/Explore";
+import Products from "../components/Products";
 
 function HomePage() {
     return (
@@ -10,6 +11,7 @@ function HomePage() {
             <Banner />
             <Brands />
             <Explore />
+            <Products />
         </>
     )
 }
