@@ -5,6 +5,7 @@ import Explore from "../components/Explore";
 import Products from "../components/Products";
 import Featured from "../components/Featured";
 import Service from "../components/Service";
+import Posts from "../components/Posts";
 
 function HomePage() {
     return (
@@ -16,6 +17,7 @@ function HomePage() {
             <Products />
             <Featured />
             <Service />
+            <Posts />
         </>
     )
 }

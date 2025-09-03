@@ -3,7 +3,7 @@ import HomeBanner from "../assets/homepage/home-banner.svg";
 function Banner() {
     return (
         <div className="flex h-[619px] mx-[74px] rounded-[20px] bg-[linear-gradient(90deg,#96E9FB_0%,#ABECD6_100%)] mr-32 mt-[25px]">
-            {/* Sol kısım - yazılar */}
+            
             <div className="flex flex-col justify-center gap-[30px] flex-1 p-10">
                 <p className="font-montserrat font-bold text-base text-[#2A7CC7]
                               opacity-0 translate-x-20 animate-fadeLeft">
