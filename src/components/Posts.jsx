@@ -4,7 +4,7 @@ import two from "../assets/homepage/posts/2.svg";
 
 function Posts() {
     return (
-        <div className="flex flex-col py-20 gap-24">
+        <div className="flex flex-col py-20 gap-24 ">
             <div className="flex flex-col items-center gap-[0.625rem]">
                 <h6 className="font-montserrat font-bold text-[#23A6F0] text-sm">Practice Advice</h6>
                 <h2 className="font-montserrat font-bold text-[#252B42] text-[2.5rem]">Featured Posts</h2>

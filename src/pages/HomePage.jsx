@@ -6,6 +6,7 @@ import Products from "../components/Products";
 import Featured from "../components/Featured";
 import Service from "../components/Service";
 import Posts from "../components/Posts";
+import Footer from "../layout/Footer";
 
 function HomePage() {
     return (
@@ -18,6 +19,7 @@ function HomePage() {
             <Featured />
             <Service />
             <Posts />
+            <Footer />
         </>
     )
 }
