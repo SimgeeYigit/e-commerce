@@ -18,7 +18,14 @@ export default {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
       },
-    },
+      backgroundImage: {
+        'explore-1': "url('/assets/homepage/explore/1.jpg')",
+        'explore-2': "url('/assets/homepage/explore/2.jpg')",
+        'explore-3': "url('/assets/homepage/explore/3.jpg')",
+        'mobile-explore-1': "url('/assets/homepage/mobile-explore/1.jpg')",
+        'mobile-explore-2': "url('/assets/homepage/mobile-explore/2.jpg')",
+        'mobile-explore-3': "url('/assets/homepage/mobile-explore/3.jpg')",
+      },
   },
   plugins: [],
-}
+}}
