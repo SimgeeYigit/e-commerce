@@ -1,4 +1,4 @@
-import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, User, Search, ShoppingCart, Heart, ChevronDown } from 'lucide-react';
+import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, User, Search, ShoppingCart, Heart, ChevronDown, ChartNoAxesColumnIncreasing } from 'lucide-react';
 import ShopDropdown from './ShopDropDown';
 
 function Header() {
@@ -6,7 +6,7 @@ function Header() {
 
     return (
         <header className='h-[136px]'>
-            <div className='bg-[#252B42] h-[58px] flex items-center justify-between px-6'>
+            <div className='bg-[#252B42] h-[58px] hidden md:flex items-center justify-between px-6'>
                 <div className='flex gap-2.5'>
                     <div className='header-text p-2.5 flex gap-x-[5px] items-center'>
                         <Phone className="w-4 h-4" />
@@ -35,9 +35,9 @@ function Header() {
 
             <nav className="bg-[#FFFFFF] flex items-center justify-between px-6 h-[58px] mt-3">
 
-                <h1 className='font-montserrat font-bold text-2xl pl-3.5 text-[#252B42] w-[187px]'>Bandage</h1>
+                <h1 className='font-montserrat font-bold text-2xl md:pl-3.5 text-[#252B42]'>Bandage</h1>
 
-                <ul className='navbar-text flex gap-[15px] items-center'>
+                <ul className='hidden md:flex navbar-text gap-[15px] items-center'>
                     <li>Home</li>
                     <ShopDropdown />
                     <li>About</li>
@@ -46,20 +46,22 @@ function Header() {
                     <li>Pages</li>
                 </ul>
 
-                <div className='text-[#23A6F0] flex gap-4 items-center'>
+                <div className='text-[#3C403D] md:text-[#23A6F0] flex gap-4 items-center'>
                     <div className='flex items-center gap-[5px] font-montserrat font-bold text-sm'>
-                        <User className="w-4 h-4"/>
-                        <p>Login / Register</p>
+                        <User className="w-4 h-4" />
+                        <p className='hidden md:block'>Login / Register</p>
                     </div>
-                    <Search className="w-4 h-4"/>
+                    <Search className="w-4 h-4" />
                     <div className='flex items-center gap-1'>
-                        <ShoppingCart className="w-4 h-4"/>
+                        <ShoppingCart className="w-4 h-4" />
+                        <p className='hidden md:font-montserrat font-normal text-xs'>1</p>
+                    </div>
+                    <div className='hidden md:flex items-center gap-1'>
+                        <Heart className="w-4 h-4" />
                         <p className='font-montserrat font-normal text-xs'>1</p>
                     </div>
-                    <div className='flex items-center gap-1'>
-                        <Heart className="w-4 h-4"/>
-                        <p className='font-montserrat font-normal text-xs'>1</p>
-                    </div>
+                    <ChartNoAxesColumnIncreasing className='block -rotate-90 text-[#252B42] w-[1rem] h-[1rem] md:hidden' />
+
                 </div>
             </nav>
 

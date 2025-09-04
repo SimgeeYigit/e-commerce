@@ -9,7 +9,7 @@ function Posts() {
                 <h6 className="font-montserrat font-bold text-[#23A6F0] text-sm">Practice Advice</h6>
                 <h2 className="font-montserrat font-bold text-[#252B42] text-[2.5rem]">Featured Posts</h2>
             </div>
-            <div className="flex mx-[9.876rem] justify-around ">
+            <div className="flex mx-[9.876rem] justify-between">
                 <div className="flex">
                     <div className="relative inline-block">
                         <img src={one} alt="Post 1" className="block" />
