@@ -25,7 +25,9 @@ export default {
         'mobile-explore-1': "url('/assets/homepage/mobile-explore/1.jpg')",
         'mobile-explore-2': "url('/assets/homepage/mobile-explore/2.jpg')",
         'mobile-explore-3': "url('/assets/homepage/mobile-explore/3.jpg')",
-      },
+        'mobile-posts-1': "url('/assets/homepage/mobile-posts/1.jpg')",
+        'mobile-posts-2': "url('/assets/homepage/mobile-posts/2.jpg')",
+      }
   },
   plugins: [],
 }}

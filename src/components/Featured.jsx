@@ -8,7 +8,7 @@ function Featured() {
                 <img src={two} alt="Featured Product 1" className="w-1/3 h-auto object-cover md:w-auto" />
                 <img src={one} alt="Featured Product 2" className="w-1/2 h-auto object-cover md:w-auto" />
             </div>
-            <div className="flex flex-col gap-4 md:pl-10 md:pr-0">
+            <div className="flex flex-col gap-4 pr-3 md:pl-10 md:pr-0">
                 <h5 className="font-montserrat font-bold text-[#23A6F0] text-base">Featured Products</h5>
                 <h2 className="font-montserrat font-bold text-[#252B42] text-[2.5rem]">We love <br className="block md:hidden" />what we do</h2>
                 <p className="font-montserrat font-normal text-[#737373] text-sm hidden md:block">Problems trying to resolve the <br className="block md:hidden" />conflict between<br />
