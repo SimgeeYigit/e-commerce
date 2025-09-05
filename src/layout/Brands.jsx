@@ -7,7 +7,8 @@ import y from "../assets/homepage/logos/y.svg";
 
 function Brands() {
     return (
-        <div className="flex items-center py-[50px] gap-[30px] justify-around mx-[195px]" >
+        <div className="flex items-center py-28 md:py-[50px] gap-[30px] justify-between
+                mx-4 md:mx-[195px] md:flex-row flex-col">
             <img src={hooli} alt="Hooli" />
             <img src={lyft} alt="Lyft" />
             <img src={x} alt="X" />
@@ -15,6 +16,7 @@ function Brands() {
             <img src={aws} alt="AWS" />
             <img src={y} alt="Y" />
         </div>
+
     )
 }
 

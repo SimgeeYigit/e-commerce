@@ -1,7 +1,7 @@
 
 function Explore() {
     return (
-        <div className="flex flex-col md:mx-[128px] gap-4 my-0 md:my-20 items-center md:justify-center md:flex-row">
+        <div className="flex flex-col md:mx-[128px] gap-4 my-20 items-center md:justify-center md:flex-row mt-0">
             <div>
                 <div className="w-[21.5625rem] h-[34.75rem] md:w-[611px] md:h-[572px] flex flex-col justify-end bg-cover bg-center bg-mobile-explore-1 md:bg-explore-1">
                     <div className="bg-[#2D8BC0BF] w-[346px] md:w-[420px] h-[238px] pt-[60px] pl-[41px] md:pl-[66px] flex flex-col gap-5">
