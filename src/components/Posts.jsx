@@ -154,6 +154,10 @@ function Posts() {
             </div>
 
             <div className="block md:hidden py-20 px-5 flex flex-col gap-6">
+                <div className="flex flex-col items-center gap-[0.625rem] pb-14 md:pb-0">
+                    <h6 className="font-montserrat font-bold text-[#23A6F0] text-sm">Practice Advice</h6>
+                    <h2 className="font-montserrat font-bold text-[#252B42] text-[2.5rem]">Featured Posts</h2>
+                </div>
                 <div className="flex flex-col">
                     <div className="bg-mobile-posts-1 bg-cover w-full h-[18.75rem] flex items-start">
                         <h6 className="w-[3.5rem] h-[1.5rem] border rounded-[0.1875rem] px-[0.625rem] bg-[#E74040] border-[#E74040] mt-4 ml-4
