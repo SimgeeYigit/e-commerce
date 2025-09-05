@@ -1,11 +1,12 @@
+import { useState } from "react";
 import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, User, Search, ShoppingCart, Heart, ChevronDown, ChartNoAxesColumnIncreasing } from 'lucide-react';
 import ShopDropdown from './ShopDropDown';
 
 function Header() {
-
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className='h-[136px]'>
+        <header className='h-auto'>
             <div className='bg-[#252B42] h-[58px] hidden md:flex items-center justify-between px-6'>
                 <div className='flex gap-2.5'>
                     <div className='header-text p-2.5 flex gap-x-[5px] items-center'>
@@ -34,7 +35,6 @@ function Header() {
             </div>
 
             <nav className="bg-[#FFFFFF] flex items-center justify-between px-6 h-[58px] mt-3">
-
                 <h1 className='font-montserrat font-bold text-2xl md:pl-3.5 text-[#252B42]'>Bandage</h1>
 
                 <ul className='hidden md:flex navbar-text gap-[15px] items-center'>
@@ -60,15 +60,26 @@ function Header() {
                         <Heart className="w-4 h-4" />
                         <p className='font-montserrat font-normal text-xs'>1</p>
                     </div>
-                    <ChartNoAxesColumnIncreasing className='block -rotate-90 text-[#252B42] w-[1rem] h-[1rem] md:hidden' />
-
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden"
+                    >
+                        <ChartNoAxesColumnIncreasing className='block -rotate-90 text-[#252B42] w-[1rem] h-[1rem]' />
+                    </button>
                 </div>
             </nav>
 
+            {/* Mobil Menü (artık absolute değil, normal flow’da) */}
+            {isMenuOpen && (
+                <div className='md:hidden font-montserrat font-normal text-2xl text-[#737373] flex flex-col items-center gap-6 py-6 bg-white'>
+                    <h1>Home</h1>
+                    <h1>Product</h1>
+                    <h1>Pricing</h1>
+                    <h1>Contact</h1>
+                </div>
+            )}
         </header>
     )
 }
-
-
 
 export default Header;

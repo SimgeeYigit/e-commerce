@@ -29,7 +29,7 @@ function Banner() {
                 <img
                     src={HomeBanner}
                     alt="home-banner"
-                    className="w-[80%] max-w-[410px] h-auto md:w-auto md:h-full md:max-w-none object-cover md:mr-[-85px]"
+                    className="w-[100%] max-w-[410px] h-auto md:w-auto md:h-full md:max-w-none object-cover md:mr-[-85px]"
                 />
             </div>
         </div>
