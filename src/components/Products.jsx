@@ -18,9 +18,9 @@ function Products() {
     const [products, setProducts] = useState([one, two, three, four, five, six, seven, eight, nine, ten]);
 
     return (
-        <div className="py-20 flex flex-col md:mx-[9.876rem] mx-0 gap-6 md:gap-0">
+        <div className="pb-20 md:pb-0 flex flex-col md:mx-[9.876rem] mx-0 gap-6 md:gap-0">
             <div className="flex flex-col justify-center items-center gap-2.5 py-12 md:py-8 px-10 text-center">
-                <h4 className="font-montserrat font-normal text-[#737373] text-xl">Featured Products</h4>
+                <h4 className="font-montserrat font-normal text-[#737373] text-xl hidden md:block">Featured Products</h4>
                 <h3 className="font-montserrat font-bold text-[#252B42] text-2xl">BESTSELLER PRODUCTS</h3>
                 <p className="font-montserrat font-normal text-[#737373] text-sm px-4 md:px-0">Problems trying to resolve the conflict between</p>
             </div>
