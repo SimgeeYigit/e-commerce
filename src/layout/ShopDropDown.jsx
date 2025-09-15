@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 function ShopDropdown() {
+  const history = useHistory();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -22,7 +24,10 @@ function ShopDropdown() {
     <li className="relative" ref={dropdownRef}>
       <div
         className="flex items-center gap-1 cursor-pointer text-[#252B42] font-medium"
-        onClick={() => setOpen(!open)}
+        onClick={() => {
+          setOpen(!open);
+          history.push("/shop");
+        }}
       >
         Shop {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
       </div>

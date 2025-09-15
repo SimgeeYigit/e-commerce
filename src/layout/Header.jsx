@@ -9,7 +9,7 @@ function Header() {
         <header className='h-auto'>
             <div className='bg-[#252B42] h-[58px] hidden md:flex items-center justify-between px-6'>
                 <div className='flex gap-2.5'>
-                    <div className='header-text p-2.5 flex gap-x-[5px] items-center'>
+                    <div className='header-text flex gap-x-[5px] items-center'>
                         <Phone className="w-4 h-4" />
                         <p>(225) 555-0118</p>
                     </div>
@@ -23,7 +23,7 @@ function Header() {
 
                 <p className='header-text '>Follow Us and get a chance to win 80% off</p>
 
-                <div className='header-text flex items-center gap-2.5 p-2.5'>
+                <div className='header-text flex items-center gap-2.5'>
                     <p>Follow Us :</p>
                     <div className='flex gap-2.5 p-[5px]'>
                         <a href='https://www.instagram.com' target="_blank"><Instagram className="w-4 h-4" /></a>
@@ -35,7 +35,7 @@ function Header() {
             </div>
 
             <nav className="bg-[#FFFFFF] flex items-center justify-between px-6 h-[58px] mt-3">
-                <h1 className='font-montserrat font-bold text-2xl md:pl-3.5 text-[#252B42]'>Bandage</h1>
+                <h1 className='font-montserrat font-bold text-2xl text-[#252B42]'>Bandage</h1>
 
                 <ul className='hidden md:flex navbar-text gap-[15px] items-center'>
                     <li>Home</li>
@@ -69,7 +69,6 @@ function Header() {
                 </div>
             </nav>
 
-            {/* Mobil Menü (artık absolute değil, normal flow’da) */}
             {isMenuOpen && (
                 <div className='md:hidden font-montserrat font-normal text-2xl text-[#737373] flex flex-col items-center gap-6 py-6 bg-white'>
                     <h1>Home</h1>
