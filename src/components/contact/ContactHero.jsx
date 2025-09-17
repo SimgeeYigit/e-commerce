@@ -11,7 +11,7 @@ function ContactHero() {
                 <h4 className='font-normal text-[#737373] text-xl'>We know how large objects will act,<br/>
                     but things on a small scale</h4>
                 <div className='flex flex-col font-bold text-2xl gap-4'>
-                    <h3>Phone ; +451 215 215 </h3>
+                    <h3>Phone : +451 215 215 </h3>
                     <h3>Fax : +451 215 215</h3>
                 </div>
                 <div className='flex items-center gap-[34px] p-[10px]'>

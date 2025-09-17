@@ -76,7 +76,7 @@ function Header() {
                     <h1>Home</h1>
                     <h1>Product</h1>
                     <h1>Pricing</h1>
-                    <h1>Contact</h1>
+                    <h1 onClick={() => history.push("/contact")}>Contact</h1>
                 </div>
             )}
         </header>
