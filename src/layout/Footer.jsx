@@ -1,10 +1,10 @@
 import { Instagram, Facebook, Twitter } from 'lucide-react';
 import { Input, InputGroup, InputGroupText } from 'reactstrap';
 
-function Footer() {
+function Footer({ padding = "px-[2.8125rem] md:px-[9.876rem]", children }) {
     return (
         <footer className="h-[30.5rem] w-auto">
-            <div className='flex flex-col bg-[#FAFAFA] h-[8.875rem] items-start md:items-center justify-center md:justify-between px-[2.8125rem] md:px-[9.876rem] md:flex-row gap-4 md:gap-0'>
+            <div className={`flex flex-col bg-[#FAFAFA] h-[8.875rem] items-start md:items-center justify-center md:justify-between ${padding} md:flex-row gap-4 md:gap-0`}>
                 <h3 className="font-montserrat font-bold text-[#252B42] text-2xl">Bandage</h3>
                 <div className='flex gap-5'>
                     <a href='https://www.instagram.com' target="_blank"><Instagram className="w-6 h-6 text-[#23A6F0]" /></a>
@@ -12,7 +12,7 @@ function Footer() {
                     <a href='https://www.twitter.com' target="_blank"><Twitter className="w-6 h-6 text-[#23A6F0]" /></a>
                 </div>
             </div>
-            <div className='bg-[#FFFFFF] md:h-[17rem] h-auto py-[3.125rem] md:px-[9.876rem] px-[2.8125rem]'>
+            <div className={`bg-[#FFFFFF] md:h-[17rem] h-auto py-[3.125rem] ${padding}`}>
                 <div className='flex flex-col justify-between md:flex-row gap-8'>
                     <div className='flex flex-col gap-5'>
                         <h5 className='flex flex-col font-montserrat font-bold text-[#252B42] text-base'>Company Info</h5>
@@ -68,7 +68,7 @@ function Footer() {
                 </div>
             </div>
             <div className='flex bg-[#FAFAFA] md:h-[4.625rem] items-center h-[6.125rem] justify-center md:justify-start'>
-                <h6 className="font-montserrat font-bold text-[#737373] text-sm px-[2.8125rem] md:px-[9.876rem] text-center">Made With Love By <br className='block md:hidden'/>Finland All Right Reserved</h6>
+                <h6 className={`font-montserrat font-bold text-[#737373] text-sm  ${padding} text-center`}>Made With Love By <br className='block md:hidden' />Finland All Right Reserved</h6>
             </div>
         </footer>
     );

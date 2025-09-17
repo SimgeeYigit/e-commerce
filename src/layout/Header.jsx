@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, User, Search, ShoppingCart, Heart, ChevronDown, ChartNoAxesColumnIncreasing } from 'lucide-react';
 import ShopDropdown from './ShopDropDown';
+import { useHistory } from "react-router-dom";
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const history = useHistory();
 
     return (
         <header className='h-auto'>
@@ -42,7 +44,7 @@ function Header() {
                     <ShopDropdown />
                     <li>About</li>
                     <li>Blog</li>
-                    <li>Contact</li>
+                    <button><li onClick={() => history.push("/contact")}>Contact</li></button>
                     <li>Pages</li>
                 </ul>
 

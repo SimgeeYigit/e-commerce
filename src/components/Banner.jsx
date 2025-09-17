@@ -25,7 +25,7 @@ function Banner() {
                 </p>
                 <button 
                 onClick={() => history.push('/shop')}
-                className="w-[221px] h-[62px] rounded-[5px] py-[15px] px-10 bg-[#23A6F0] text-montserrat font-bold text-2xl text-[#FFFFFF] 
+                className="font-montserrat rounded-[5px] py-[15px] px-10 bg-[#23A6F0] text-montserrat font-bold text-2xl text-[#FFFFFF] 
                 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:bg-indigo-500 md:opacity-0 md:translate-x-20 md:animate-fadeLeft md:animation-delay-1400"> SHOP NOW </button>
             </div>
 
