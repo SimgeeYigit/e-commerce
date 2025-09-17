@@ -3,14 +3,15 @@ import ContactHeader from '../components/contact/ContactHeader';
 import ContactHero from '../components/contact/ContactHero';
 import Visit from '../components/contact/Visit';
 import Footer from '../layout/Footer';
+import Header from "../layout/Header";
 
 function ContactPage() {
     return (
         <div>
-            <ContactHeader />
+            <Header />
             <ContactHero />
             <Visit />
-            <Footer padding='px-[180px]' />
+            <Footer padding='md:px-[180px] px-[42px]' />
         </div>
     )
 }

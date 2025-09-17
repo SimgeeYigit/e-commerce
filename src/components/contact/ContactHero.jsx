@@ -3,13 +3,13 @@ import contactImg from '../../assets/contact/contact.svg';
 
 function ContactHero() {
     return (
-        <div className='flex items-center justify-between px-[180px] gap-20 font-montserrat'>
-            <div className='flex flex-col gap-[35px]'>
+        <div className='flex items-center justify-between px-[20px] md:px-[180px] gap-20 font-montserrat md:flex-row flex-col'>
+            <div className='flex flex-col gap-[35px] md:items-start items-center text-center md:text-start md:pt-0 pt-8'>
                 <h5 className='font-bold text-base text-[#252B42]'>CONTACT US</h5>
-                <h1 className='font-bold text-[58px] text-[#252B42]'>Get in touch<br/>
+                <h1 className='font-bold text-[40px] md:text-[58px] text-[#252B42]'>Get in touch<br/>
                     today!</h1>
-                <h4 className='font-normal text-[#737373] text-xl'>We know how large objects will act,<br/>
-                    but things on a small scale</h4>
+                <h4 className='font-normal text-[#737373] text-xl w-[80%] md:w-[100%]'>We know how large objects will act,<br className='hidden md:block'/>
+                    but things on a small scale <span className='md:hidden'>just do not act that way.</span></h4>
                 <div className='flex flex-col font-bold text-2xl gap-4'>
                     <h3>Phone : +451 215 215 </h3>
                     <h3>Fax : +451 215 215</h3>
