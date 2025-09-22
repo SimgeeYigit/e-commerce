@@ -102,12 +102,12 @@ function Team() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center py-[112px] font-montserrat gap-[112px]">
-            <h2 className='text-[40px] font-bold text-[#252B42]'>Meet Our Team</h2>
+        <div className="flex flex-col justify-center items-center py-[112px] font-montserrat gap-[112px] px-10">
+            <h2 className='text-[40px] font-bold text-[#252B42] text-center'>Meet Our Team</h2>
 
             <div className='flex flex-col gap-16'>
                 {groupedMembers.map((group, groupIndex) => (
-                    <div key={groupIndex} className='flex justify-center gap-8'>
+                    <div key={groupIndex} className='flex flex-col md:flex-row justify-center gap-8'>
                         {group.map(member => (
                             <div key={member.id} className="flex flex-col items-center text-center">
                                 <img

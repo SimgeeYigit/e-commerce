@@ -40,7 +40,7 @@ function Header() {
                 <h1 className='font-montserrat font-bold text-2xl text-[#252B42]'>Bandage</h1>
 
                 <ul className='hidden md:flex navbar-text gap-[15px] items-center'>
-                    <li>Home</li>
+                    <button><li onClick={() => history.push("/")}>Home</li></button>
                     <ShopDropdown />
                     <button><li onClick={() => history.push("/about")}>About</li></button>
                     <li>Blog</li>

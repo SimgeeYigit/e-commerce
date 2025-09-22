@@ -13,7 +13,7 @@ function TeamPage() {
             <TeamHero />
             <Team />
             <TeamCta />
-            <Footer />
+            <Footer padding='md:px-[180px] px-[42px]' />
         </>
     );
 }
