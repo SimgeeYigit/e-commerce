@@ -42,10 +42,10 @@ function Header() {
                 <ul className='hidden md:flex navbar-text gap-[15px] items-center'>
                     <li>Home</li>
                     <ShopDropdown />
-                    <li>About</li>
+                    <button><li onClick={() => history.push("/about")}>About</li></button>
                     <li>Blog</li>
                     <button><li onClick={() => history.push("/contact")}>Contact</li></button>
-                    <li>Pages</li>
+                    <button><li onClick={() => history.push("/team")}>Team</li></button>
                 </ul>
 
                 <div className='text-[#3C403D] md:text-[#23A6F0] flex gap-4 items-center'>
