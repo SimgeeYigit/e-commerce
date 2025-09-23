@@ -2,9 +2,9 @@ import {combineReducers,applyMiddleware, legacy_createStore as createStore} from
 import { thunk } from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
-import clientReducer from "../reducers/clientReducer";
-import productReducer from "../reducers/productReducer";
-import shoppingCartReducer from "../reducers/shoppingCartReducer";
+import clientReducer from "./reducers/clientReducer";
+import productReducer from "./reducers/productReducer";
+import shoppingCartReducer from "./reducers/shoppingCartReducer";
 
 const rootReducer = combineReducers({
     client: clientReducer,
