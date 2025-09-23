@@ -31,5 +31,4 @@ function Cloths() {
     </>
   );
 }
-
 export default Cloths;
