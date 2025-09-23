@@ -4,6 +4,8 @@ import ShopPage from './pages/ShopPage'
 import ContactPage from './pages/ContactPage'
 import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
+import SignUpPage from './pages/SignUpPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
           </Route>
           <Route path="/team">
             <TeamPage />
+          </Route>
+          <Route path="/signup">
+            <SignUpPage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -50,8 +50,20 @@ function Header() {
 
                 <div className='text-[#3C403D] md:text-[#23A6F0] flex gap-4 items-center'>
                     <div className='flex items-center gap-[5px] font-montserrat font-bold text-sm'>
-                        <User className="w-4 h-4" />
-                        <p className='hidden md:block'>Login / Register</p>
+                        <User className="w-4 h-4 cursor-pointer" onClick={() => history.push("/signup")}/>
+                        <button
+                            onClick={() => history.push("/login")}
+                            className="hover:underline md:block hidden"
+                        >
+                            Login
+                        </button>
+                        <span className="md:block hidden">/</span>
+                        <button
+                            onClick={() => history.push("/signup")}
+                            className="hover:underline md:block hidden"
+                        >
+                            Register
+                        </button>
                     </div>
                     <Search className="w-4 h-4" />
                     <div className='flex items-center gap-1'>
