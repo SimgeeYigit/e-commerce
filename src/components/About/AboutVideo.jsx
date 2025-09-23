@@ -21,19 +21,19 @@ function AboutVideo() {
         <div className="grid place-items-center relative group">
             <video
                 ref={videoRef}
-                className="h-[540px] rounded-[10px] col-start-1 row-start-1"
+                className="md:h-[540px] h-auto md:w-auto w-[307px] rounded-[10px] col-start-1 row-start-1"
                 src={videoFile}
             />
             <button
                 onClick={playPause}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
-                className={`col-start-1 row-start-1 w-[95px] h-[95px] z-10
+                className={`col-start-1 row-start-1 md:w-[95px] md:h-[95px] w-[50px] h-[50px] z-10
                             ${isPlaying ? "bg-transparent" : "bg-[#23A6F0]"} 
                             ${hovered && isPlaying ? "bg-[#23A6F0]" : ""}
                             text-white rounded-full flex items-center justify-center transition-colors duration-300`}
             >
-                {isPlaying ? <Pause fill="white" className="w-8 h-8" /> : <Play fill="white" className="w-8 h-8" />}
+                {isPlaying ? <Pause fill="white" className="md:w-8 md:h-8 w-6 h-6" /> : <Play fill="white" className="md:w-8 md:h-8 w-6 h-6" />}
             </button>
         </div>
     );

@@ -5,10 +5,10 @@ import stripe from "../assets/homepage/logos/stripe.svg";
 import x from "../assets/homepage/logos/x.svg";
 import y from "../assets/homepage/logos/y.svg";
 
-function Brands() {
+function Brands({ padding = "py-28 md:py-[50px]", children }) {
     return (
-        <div className="flex items-center py-28 md:py-[50px] gap-[30px] justify-between
-                mx-4 md:mx-[195px] md:flex-row flex-col">
+        <div className={`flex items-center ${padding} gap-[30px] justify-between
+                mx-4 md:mx-[195px] md:flex-row flex-col`}>
             <img src={hooli} alt="Hooli" />
             <img src={lyft} alt="Lyft" />
             <img src={x} alt="X" />

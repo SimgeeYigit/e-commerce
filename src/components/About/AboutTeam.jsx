@@ -36,13 +36,13 @@ function AboutTeam() {
     ]);
 
     return (
-        <div className='font-montserrat flex flex-col py-[112px] gap-[112px]'>
-            <div className="flex flex-col items-center text-center gap-[10px]">
+        <div className='font-montserrat flex flex-col py-[112px] md:gap-[112px] gap-[50px]'>
+            <div className="flex flex-col items-center text-center gap-[10px] px-16 md:px-0">
                 <h2 className="font-bold text-[40px] text-[#252B42]">Meet Our Team</h2>
-                <p className="font-normal text-sm text-[#737373]">Problems trying to resolve the conflict between<br />
+                <p className="font-normal text-sm text-[#737373]">Problems trying to resolve the conflict between <br className='hidden md:inline' />
                     the two major realms of Classical physics: Newtonian mechanics </p>
             </div>
-            <div className='flex gap-[30px] justify-center'>
+            <div className='flex gap-[30px] justify-center md:flex-row flex-col px-10 md:px-0'>
                 {teamMembers.map(member => (
                     <div key={member.id} className="flex flex-col items-center gap-[10px]">
                         <img className='w-[100%] h-auto md:w-auto md:max-w-none object-cover' src={member.image} alt={member.name} />

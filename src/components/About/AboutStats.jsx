@@ -1,6 +1,6 @@
 function AboutStats() {
     return (
-        <div className="flex py-20 gap-[30px] justify-between px-[150px]">
+        <div className="flex py-[100px] md:py-20 gap-[100px] md:gap-[30px] justify-between md:px-[150px] md:flex-row flex-col">
             <div className="font-montserrat flex flex-col items-center">
                 <h1 className="font-bold text-[58px] text-[#252B42]">15K</h1>
                 <h5 className="font-bold text-base text-[#737373]">Happy Customers</h5>
