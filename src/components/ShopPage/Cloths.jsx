@@ -7,7 +7,7 @@ function Cloths() {
 
   return (
     <>
-      <div className="flex font-montserrat font-bold justify-between items-center py-6 bg-[#FAFAFA] px-[9.876rem] md:flex-row flex-col">
+      <div className="flex font-montserrat font-bold justify-between gap-[30px] md:gap-0 items-center py-6 bg-[#FAFAFA] px-[180px] md:flex-row flex-col">
         <h3 className="text-2xl text-[#252B42]">Shop</h3>
         <div className="flex items-center gap-2">
           <button onClick={() => { history.push("/") }} className="text-sm text-[#252B42]">Home</button>
@@ -15,7 +15,7 @@ function Cloths() {
           <span className="text-sm text-[#BDBDBD]">Shop</span>
         </div>
       </div>
-      <div className="flex justify-center gap-4 pb-12 md:flex-row flex-col">
+      <div className="flex justify-center gap-4 pb-12 md:flex-row flex-col items-center">
         {bgList.map((bg, index) => (
           <div
             key={index}

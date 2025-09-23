@@ -4,7 +4,7 @@ import { useState } from "react";
 function Show({ showColumns, setShowColumns }) {
 
     return (
-        <div className="font-montserrat flex items-center justify-between py-6 px-[9.876rem]">
+        <div className="font-montserrat flex items-center justify-between py-6 px-0 md:px-[180px] md:flex-row flex-col gap-6">
             <h6 className="font-bold text-sm text-[#737373]">Showing all 12 results</h6>
             <div className="flex gap-[15px] items-center">
                 <h6 className="font-bold text-sm text-[#737373]">Views:</h6>

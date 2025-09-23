@@ -1,11 +1,11 @@
 import Brands from "../layout/Brands";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";
-import Cloths from "../components/Cloths";
-import Show from "../components/Show";
-import Products from "../components/shoppage/Products";
+import Cloths from "../components/ShopPage/Cloths";
+import Show from "../components/ShopPage/Show";
+import Products from "../components/ShopPage/Products";
 import { useState } from "react";
-import Pagination from "../components/Pagination";
+import Pagination from "../components/ShopPage/Pagination";
 
 function ShopPage() {
     const [showColumns, setShowColumns] = useState(false);
