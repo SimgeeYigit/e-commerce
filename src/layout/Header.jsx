@@ -87,7 +87,7 @@ function Header() {
                 <div className='md:hidden font-montserrat font-normal text-2xl text-[#737373] flex flex-col items-center gap-6 py-6 bg-white'>
                     <h1 onClick={() => history.push("/")}>Home</h1>
                     <h1 onClick={() => history.push("/shop")}>Shop</h1>
-                    <h1>Product</h1>
+                    <h1 onClick={() => history.push("/product")}>Product</h1>
                     <h1 onClick={() => history.push("/about")}>About</h1>
                     <h1>Pricing</h1>
                     <h1 onClick={() => history.push("/contact")}>Contact</h1>
