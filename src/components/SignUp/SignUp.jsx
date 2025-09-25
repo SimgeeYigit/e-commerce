@@ -4,7 +4,6 @@ import {
     TextField,
     Input,
     FormHelperText,
-    FilledInput,
     MenuItem,
     FormControl,
     InputLabel,
@@ -22,7 +21,6 @@ const api = axios.create({
 });
 
 function SignUp() {
-
     const [showPassword, setShowPassword] = useState(false);
     const history = useHistory();
     const [roles, setRoles] = useState([]);
@@ -31,7 +29,7 @@ function SignUp() {
     const {
         register,
         handleSubmit,
-        formState: { errors, isValid },
+        formState: { errors },
         watch,
         control
     } = useForm({
@@ -63,15 +61,26 @@ function SignUp() {
     const submitForm = async (formData) => {
         setLoading(true);
 
-        // Eğer role Customer/Admin ise store alanlarını kaldır
-        const payload = { ...formData };
-        if (selectedRole !== "Store") delete payload.store;
+        const payload = {
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            role_id: formData.role_id,
+            ...(formData.role_id === "Store" && {
+                store: {
+                    name: formData.store.name,
+                    phone: formData.store.phone,
+                    tax_no: formData.store.tax_no,
+                    bank_account: formData.store.bank_account,
+                },
+            }),
+        };
 
         try {
             const response = await api.post("/signup", payload);
             console.log("Success:", response.data);
-            alert("You need to click link in email to activate your account!");
-            navigate(-1); // önceki sayfaya dön
+            alert("User created. Check your email for activation instructions.");
+            history.goBack();
         } catch (err) {
             console.error("Error:", err.response?.data || err.message);
             alert(err.response?.data?.message || "Submit failed");
@@ -222,8 +231,8 @@ function SignUp() {
                             <TextField
                                 id="outlined-required"
                                 label="Store Name"
-                                error={!!errors.store_name}
-                                helperText={errors.store_name ? errors.store_name.message : ""}
+                                error={!!errors.store?.name}
+                                helperText={errors.store?.name ? errors.store.name.message : ""}
                                 {...register("store_name", {
                                     required: "Please enter your store name",
                                     minLength: {
@@ -237,8 +246,8 @@ function SignUp() {
                             <TextField
                                 label="Store Phone"
                                 id="outlined-start-adornment"
-                                error={!!errors.store_phone}
-                                helperText={errors.store_phone ? errors.store_phone.message : ""}
+                                error={!!errors.store?.phone}
+                                helperText={errors.store?.phone ? errors.store.phone.message : ""}
                                 {...register("store_phone", {
                                     required: "Please enter your phone number",
                                     pattern: {
@@ -269,8 +278,8 @@ function SignUp() {
                                         message: "Must match format TXXXXVXXXXXX"
                                     }
                                 })}
-                                error={!!errors.store_tax_no}
-                                helperText={errors.store_tax_no ? errors.store_tax_no.message : "Format: TXXXXVXXXXXX"}
+                                error={!!errors.store?.tax_no}
+                                helperText={errors.store?.tax_no ? errors.store.tax_no.message : "Format: TXXXXVXXXXXX"}
                             />
 
                             {/* Store Bank Account */}
@@ -283,13 +292,42 @@ function SignUp() {
                                         message: "Invalid TR IBAN format"
                                     }
                                 })}
-                                error={!!errors.store_bank_account}
-                                helperText={errors.store_bank_account ? errors.store_bank_account.message : "Format: TRXXXXXXXXXXXXXXXXXXXXXXXX"}
+                                error={!!errors.store?.bank_account}
+                                helperText={errors.store?.bank_account ? errors.store.bank_account.message : "Format: TRXXXXXXXXXXXXXXXXXXXXXXXX"}
                             />
                         </>
                     )}
-                    <button className='border border-[#23A6F0] py-[15px] px-[40px] rounded-[5px] bg-[#23A6F0] text-[#FFFFFF]
-                                font-bold text-base'>Sign Up</button>
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className={`border border-[#23A6F0] py-[15px] px-[40px] rounded-[5px] 
+                bg-[#23A6F0] text-[#FFFFFF] font-bold text-base flex items-center justify-center gap-2
+                ${loading ? "opacity-60 cursor-not-allowed" : ""}`}
+                    >
+                        Sign Up
+                        {loading && (
+                            <svg
+                                className="animate-spin h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <circle
+                                    className="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    strokeWidth="4"
+                                ></circle>
+                                <path
+                                    className="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                                ></path>
+                            </svg>
+                        )}
+                    </button>
                     <p className="font-montserrat font-bold text-sm text-center">Already have an account?<span onClick={() => { history.push("/login") }} className="text-[#23A6F0] cursor-pointer"> Login</span> </p>
                 </form>
             </div>
