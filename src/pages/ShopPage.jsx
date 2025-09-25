@@ -17,7 +17,7 @@ function ShopPage() {
             <Show showColumns={showColumns} setShowColumns={setShowColumns} />
             <Products showColumns={showColumns} />
             <Pagination />
-            <Brands />
+            <Brands padding = "py-12 md:py-[50px]"/>
             <Footer />
         </div>
     );
