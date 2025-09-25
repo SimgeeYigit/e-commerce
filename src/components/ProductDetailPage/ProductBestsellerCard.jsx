@@ -25,14 +25,14 @@ function ProductBestsellerCard() {
     }
 
     return (
-        <div className="font-montserrat bg-[#FAFAFA] px-[220px] py-12">
-            <h3 className="font-bold text-2xl border-b border-[#ECECEC] border-b-[2px] pb-8">BESTSELLER PRODUCTS</h3>
+        <div className="font-montserrat bg-[#FAFAFA] md:px-[220px] py-12 px-8">
+            <h3 className="font-bold text-2xl border-b border-[#ECECEC] border-b-[2px] pb-8 text-center md:text-left">BESTSELLER PRODUCTS</h3>
             <div className="flex flex-col gap-6 pt-6">
                 {groupedProducts.map((group, index) => (
-                    <div key={index} className="flex gap-[30px] justify-between">
+                    <div key={index} className="flex md:flex-row flex-col gap-[30px] justify-center md:justify-between">
                         {group.map((product) => (
                             <div key={product.id} className="bg-[#FFFFFF]">
-                                <img src={product.image} alt={product.title} />
+                                <img src={product.image} alt={product.title} className="w-full h-auto" />
                                 <div className="flex flex-col px-[25px] pt-[25px] pb-[35px] gap-[10px]">
                                     <h5 className="font-bold text-base text-[#252B42]">{product.title}</h5>
                                     <h5 className="font-bold text-[#737373] text-sm">{product.secondTitle}</h5>

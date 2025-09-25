@@ -4,16 +4,16 @@ import { ChevronRight } from "lucide-react";
 function ProductDescription() {
     return (
         <div>
-            <div className="font-montserrat font-semibold text-[#737373] text-sm flex border-b gap-12 justify-center py-8 mx-[200px]">
+            <div className="font-montserrat font-semibold text-[#737373] text-sm flex md:border-b gap-2 md:gap-12 justify-center py-8 mx-0 md:mx-[200px]">
                 <h1>Description</h1>
                 <h1>Additional Information</h1>
                 <h1>Reviews <span className="text-[#23856D] font-bold">(0)</span></h1>
             </div>
-            <div className="flex gap-[30px] mx-[200px] justify-between py-10">
+            <div className="flex gap-[50px] md:gap-[30px] md:mx-[200px] mx-10 justify-between py-10 flex-col md:flex-row">
                 <div className="drop-shadow-[1rem_1rem_10px_rgba(0,0,0,0.5)]">
-                    <img className="" src={image} alt="Product" />
+                    <img src={image} alt="Product" />
                 </div>
-                <div className="flex flex-col w-[33%] gap-[30px]">
+                <div className="flex flex-col w-full md:w-[33%] gap-[30px]">
                     <h3 className="font-bold text-2xl text-[#252B42]">the quick fox jumps over </h3>
                     <p className="font-normal text-sm text-[#737373]">
                         Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.<br /><br />

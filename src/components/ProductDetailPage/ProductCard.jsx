@@ -17,15 +17,15 @@ function ProductCard() {
     const [mainImage, setMainImage] = useState(productDetail.images[0]);
 
     return (
-        <div className="font-montserrat px-[200px] bg-[#FAFAFA] pb-12">
-            <div className="flex items-center gap-2 py-6">
+        <div className="font-montserrat px-10 md:px-[200px] bg-[#FAFAFA] pb-12">
+            <div className="flex items-center justify-center md:justify-start gap-2 pt-8 pb-20 md:py-6">
                 <button onClick={() => { history.push("/") }} className="font-bold text-sm text-[#252B42]">Home</button>
                 <ChevronRight className="text-[#BDBDBD]" />
                 <span className="text-sm text-[#BDBDBD] cursor-pointer" onClick={() => { history.push("/shop") }}>Shop</span>
             </div>
-            <div className="flex gap-[40px]">
-                <div className="flex flex-col gap-[10px]">
-                    <img src={mainImage} alt="Product" className="w-[506px] h-[450px] object-cover" />
+            <div className="flex gap-[40px] md:flex-row flex-col">
+                <div className="flex flex-col gap-[40px] md:gap-[10px]">
+                    <img src={mainImage} alt="Product" className="md:w-[506px] md:h-[450px] w-[348px] h-[277px] object-cover" />
                     <div className="flex gap-[10px]">
                         {productDetail.images.map((img, index) => (
                             <img
@@ -38,7 +38,7 @@ function ProductCard() {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-col gap-[20px] w-[50%]">
+                <div className="flex flex-col gap-[20px] w-full md:w-[50%] px-2 md:px-0">
                     <h4 className="flex-normal text-xl text-[#252B42]">{productDetail.title}</h4>
                     <div className="flex gap-[10px] items-center">
                         <div className="flex">
@@ -73,7 +73,6 @@ function ProductCard() {
                                 <Eye className="w-4 h-4 text-[#252B42]" />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
