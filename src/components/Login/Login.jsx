@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { useHistory, useLocation } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import {
     TextField,
     FormControl,
@@ -11,15 +12,17 @@ import {
     FormHelperText,
     Checkbox
 } from '@mui/material';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { loginUser } from '../../Redux/store/thunks/clientThunk';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../Redux/store/actions/clientActions';
+
 
 const Login = () => {
     const history = useHistory();
-    const location = useLocation();
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -27,28 +30,33 @@ const Login = () => {
         formState: { errors }
     } = useForm();
 
-    const from = location.state?.from || "/";
-
     const submitForm = async (data) => {
         setLoading(true);
         try {
-            const response = await loginUser({
+            const response = await dispatch(loginUser({
                 email: data.email,
                 password: data.password,
                 remember: data.remember || false
-            });
+            }));
 
             if (data.remember) {
-                localStorage.setItem("token", response.token);
+                localStorage.setItem("token", JSON.stringify(response.token));
             }
+
             alert("Login successful!");
-            history.push(from);
+            if (history.length > 1) {
+                history.goBack();
+            } else {
+                history.push("/");
+            }
+
         } catch (error) {
-            alert(error.message || "Login failed!");
+            toast.error("Login failed!");
         } finally {
             setLoading(false);
         }
-    }
+    };
+
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 

@@ -1,10 +1,17 @@
 import { useState } from "react";
-import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, User, Search, ShoppingCart, Heart, ChevronDown, ChartNoAxesColumnIncreasing } from 'lucide-react';
+import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, User, Search, ShoppingCart, Heart, ChevronDown, ChartNoAxesColumnIncreasing, LogOut } from 'lucide-react';
 import ShopDropdown from './ShopDropDown';
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Gravatar from 'react-gravatar';
+import { logout } from "../Redux/store/actions/clientActions";
 
 function Header() {
+    const dispatch = useDispatch();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const clientName = useSelector(state => state.client.user.name);
+    const clientEmail = useSelector(state => state.client.user.email);
+
     const history = useHistory();
 
     return (
@@ -48,22 +55,30 @@ function Header() {
                     <button><li onClick={() => history.push("/team")}>Team</li></button>
                 </ul>
 
-                <div className='text-[#3C403D] md:text-[#23A6F0] flex gap-4 items-center'>
+                <div className='text-[#3C403D] md:text-[#23A6F0] flex gap-1 md:gap-4 items-center'>
                     <div className='flex items-center gap-[5px] font-montserrat font-bold text-sm'>
-                        <User className="w-4 h-4 cursor-pointer" onClick={() => history.push("/signup")}/>
-                        <button
-                            onClick={() => history.push("/login")}
-                            className="hover:underline md:block hidden"
-                        >
-                            Login
-                        </button>
-                        <span className="md:block hidden">/</span>
-                        <button
-                            onClick={() => history.push("/signup")}
-                            className="hover:underline md:block hidden"
-                        >
-                            Register
-                        </button>
+                        {clientName ?
+                            <div className="flex gap-2 items-center">
+                                <Gravatar email={clientEmail} size={16} />
+                                <p>{clientName}</p>
+                            </div> :
+                            <>
+                                <User className="w-4 h-4 cursor-pointer" onClick={() => history.push("/signup")} />
+                                <button
+                                    onClick={() => history.push("/login")}
+                                    className="hover:underline md:block hidden"
+                                >
+                                    Login
+                                </button>
+                                <span className="md:block hidden">/</span>
+                                <button
+                                    onClick={() => history.push("/signup")}
+                                    className="hover:underline md:block hidden"
+                                >
+                                    Register
+                                </button>
+                            </>
+                        }
                     </div>
                     <Search className="w-4 h-4" />
                     <div className='flex items-center gap-1'>
@@ -74,6 +89,12 @@ function Header() {
                         <Heart className="w-4 h-4" />
                         <p className='font-montserrat font-normal text-xs'>1</p>
                     </div>
+                    <div>
+                        {clientName ?
+                            <LogOut className="w-4 h-4 cursor-pointer" onClick={() => dispatch(logout())} /> :
+                            null}
+                    </div>
+
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="md:hidden"

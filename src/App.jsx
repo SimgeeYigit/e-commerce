@@ -7,6 +7,8 @@ import TeamPage from './pages/TeamPage';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function App() {
             <LoginPage />
           </Route>
         </Switch>
+        <ToastContainer />
       </BrowserRouter>
     </>
   )
