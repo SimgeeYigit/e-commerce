@@ -55,7 +55,7 @@ function Header() {
                     <button><li onClick={() => history.push("/team")}>Team</li></button>
                 </ul>
 
-                <div className='text-[#3C403D] md:text-[#23A6F0] flex gap-1 md:gap-4 items-center'>
+                <div className={`text-[#3C403D] md:text-[#23A6F0] flex ${clientName ? "gap-1" : "gap-4"} md:gap-4 items-center`}>
                     <div className='flex items-center gap-[5px] font-montserrat font-bold text-sm'>
                         {clientName ?
                             <div className="flex gap-2 items-center">
