@@ -27,11 +27,6 @@ export default {
         'mobile-explore-3': "url('/assets/homepage/mobile-explore/3.jpg')",
         'mobile-posts-1': "url('/assets/homepage/mobile-posts/1.jpg')",
         'mobile-posts-2': "url('/assets/homepage/mobile-posts/2.jpg')",
-        'cloths-1': "url('/assets/shoppage/cloths/1.jpg')",
-        'cloths-2': "url('/assets/shoppage/cloths/2.jpg')",
-        'cloths-3': "url('/assets/shoppage/cloths/3.jpg')",
-        'cloths-4': "url('/assets/shoppage/cloths/4.jpg')",
-        'cloths-5': "url('/assets/shoppage/cloths/5.jpg')",
       }
   },
   plugins: [],

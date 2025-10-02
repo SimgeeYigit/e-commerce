@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const SET_CATEGORIES = "SET_CATEGORIES";
 export const SET_PRODUCT_LIST = "SET_PRODUCT_LIST";
 export const SET_TOTAL = "SET_TOTAL";
@@ -5,6 +7,8 @@ export const SET_LIMIT = "SET_LIMIT";
 export const SET_OFFSET = "SET_OFFSET";
 export const SET_FILTER = "SET_FILTER";
 export const SET_FETCH_STATE = "SET_FETCH_STATE";
+
+const BASE_URL = "https://workintech-fe-ecommerce.onrender.com";
 
 export const setCategories = (categories) => ({
     type: SET_CATEGORIES,
@@ -40,3 +44,13 @@ export const setFetchState = (fetchState) => ({
     type: SET_FETCH_STATE,
     payload: fetchState
 });
+
+export const fetchCategories = () => (dispatch) => {
+  axios.get(BASE_URL + "/categories")
+    .then((response) => {
+      dispatch(setCategories(response.data));
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    })
+}

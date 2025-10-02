@@ -7,7 +7,6 @@ function Banner() {
 
     return (
         <div className="flex flex-col md:flex-row h-auto md:h-[619px] mx-4 md:mx-[74px] rounded-[20px] bg-[linear-gradient(90deg,#96E9FB_0%,#ABECD6_100%)] mt-[25px]">
-
             <div className="flex flex-col justify-center gap-[30px] flex-1 p-20 md:p-10 text-center md:text-left items-center md:items-start">
                 <p className="font-montserrat font-bold text-base text-[#2A7CC7]
                               md:opacity-0 md:translate-x-20 md:animate-fadeLeft md:animation-delay-200">
@@ -25,7 +24,7 @@ function Banner() {
                 </p>
                 <button 
                 onClick={() => history.push('/shop')}
-                className="font-montserrat rounded-[5px] py-[15px] px-10 bg-[#23A6F0] text-montserrat font-bold text-2xl text-[#FFFFFF] 
+                className="whitespace-nowrap font-montserrat rounded-[5px] py-[15px] px-10 bg-[#23A6F0] text-montserrat font-bold text-2xl text-[#FFFFFF] 
                 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:bg-indigo-500 md:opacity-0 md:translate-x-20 md:animate-fadeLeft md:animation-delay-1400"> SHOP NOW </button>
             </div>
 
