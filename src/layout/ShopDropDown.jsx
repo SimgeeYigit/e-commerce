@@ -36,15 +36,16 @@ function ShopDropdown() {
     <li className="relative" ref={dropdownRef}>
       <div
         className="flex items-center gap-1 cursor-pointer text-[#252B42] font-medium"
-        onClick={() => {
-          setOpen(!open);
-          history.push("/shop");
-        }}
+        onClick={() => setOpen(!open)}
       >
-        Shop {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        <span
+          className="hover:underline"
+          onClick={() => {
+            history.push("/shop");
+          }}>Shop</span> {open ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
       </div>
       {open && (
-        <div className="absolute top-full left-0 mt-2 w-[396px] bg-white shadow-lg flex p-4 gap-8 rounded-lg">
+        <div className="absolute top-full left-0 mt-2 w-[396px] bg-white shadow-lg flex p-4 gap-8 rounded-lg z-50">
           {/* Women */}
           <div className="flex-1 flex flex-col gap-2">
             <h3 className="font-montserrat font-bold text-sm my-4 text-[#252B42] mx-7">Kadın</h3>

@@ -43,7 +43,7 @@ function Header() {
                 </div>
             </div>
 
-            <nav className="bg-[#FFFFFF] flex items-center justify-between px-6 h-[58px] mt-3">
+            <nav className="bg-[#FFFFFF] flex items-center justify-between px-6 h-[58px] mt-2 mb-2">
                 <h1 className='font-montserrat font-bold text-2xl text-[#252B42]'>Bandage</h1>
 
                 <ul className='hidden md:flex navbar-text gap-[15px] items-center'>
