@@ -9,15 +9,17 @@ import Cloths from "../components/ShopPage/Cloths";
 
 function ShopPage() {
     const [showColumns, setShowColumns] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [sort, setSort] = useState('');
 
     return (
         <div>
             <Header />
-            <Cloths />
-            <Show showColumns={showColumns} setShowColumns={setShowColumns} />
-            <Products showColumns={showColumns} />
+            <Cloths setSelectedCategory={setSelectedCategory}  />
+            <Show showColumns={showColumns} setShowColumns={setShowColumns} sort={sort} setSort={setSort} />
+            <Products showColumns={showColumns} categoryId={selectedCategory?.id} sort={sort} />
             <Pagination />
-            <Brands padding = "py-12 md:py-[50px]"/>
+            <Brands padding="py-12 md:py-[50px]" />
             <Footer />
         </div>
     );

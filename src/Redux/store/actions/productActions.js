@@ -1,4 +1,5 @@
 import axios from "axios";
+import { set } from "react-hook-form";
 
 export const SET_CATEGORIES = "SET_CATEGORIES";
 export const SET_PRODUCT_LIST = "SET_PRODUCT_LIST";
@@ -46,11 +47,44 @@ export const setFetchState = (fetchState) => ({
 });
 
 export const fetchCategories = () => (dispatch) => {
-  axios.get(BASE_URL + "/categories")
-    .then((response) => {
-      dispatch(setCategories(response.data));
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    })
+    axios.get(BASE_URL + "/categories")
+        .then((response) => {
+            dispatch(setCategories(response.data));
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        })
 }
+
+export const fetchProducts = (category, sort) => (dispatch, getState) => {
+    dispatch(setFetchState("FETCHING"));
+    const { filter } = getState().product;
+    axios.get(BASE_URL + "/products", {
+        params: { category, filter, sort }
+    })
+        .then((response) => {
+            dispatch(setProductList(response.data.products));
+            dispatch(setTotal(response.data.total));
+            dispatch(setFetchState("FETCHED"));
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            dispatch(setFetchState("ERROR"));
+        })
+}
+
+/*
+export const fetchProductsByCategory = (categoryId) => (dispatch) => {
+    dispatch(setFetchState("FETCHING"));
+    axios.get(`${BASE_URL}/products?category=${categoryId}`)
+        .then((response) => {
+            dispatch(setProductList(response.data.products));
+            dispatch(setTotal(response.data.total));
+            dispatch(setFetchState("FETCHED"));
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            dispatch(setFetchState("ERROR"));
+        });
+}
+*/

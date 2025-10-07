@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { fetchCategories } from "../../Redux/store/actions/productActions";
 import { Link } from "react-router-dom";
 
-function Cloths() {
+function Cloths({ setSelectedCategory }) {
   const categories = useSelector(state => state.product.categories)
   const top5 = [...categories].sort((a, b) => b.rating - a.rating).slice(0, 5);
 
@@ -36,6 +36,7 @@ function Cloths() {
               to={`/shop/${gender}/${code}/${category.id}`}
             >
               <div
+                onClick={() => setSelectedCategory(category)}
                 className="w-[206px] h-[223px] bg-cover bg-center flex items-center justify-center bg-black/40 bg-blend-darken hover:bg-white cursor-pointer"
                 style={{ backgroundImage: `url(${category.img})` }}
               >
