@@ -89,7 +89,7 @@ function Header() {
                         className="hidden md:flex items-center gap-1"
                         onMouseEnter={() => setShowCart(true)}
                         onMouseLeave={() => setShowCart(false)}>
-                        <ShoppingCart className="w-4 h-4 cursor-pointer" />
+                        <ShoppingCart className="w-4 h-4 cursor-pointer" onClick={() => history.push("/cart")} />
                         <p className='font-montserrat font-normal text-xs'>{cart.length}</p>
                         {showCart && (
                             <div className="absolute right-0 top-[100px] bg-white shadow-md rounded-lg p-3 border font-montserrat w-[450px] p-5">
@@ -121,7 +121,7 @@ function Header() {
                                         <div className="flex gap-12">
                                             <button
                                                 onClick={() => history.push("/cart")}
-                                                className="mt-3 w-full bg-gray-100 text-white py-3 rounded-md text-sm hover:bg-[#1d8dd8] text-black"
+                                                className="mt-3 w-full bg-gray-100 py-3 rounded-md text-sm hover:bg-[#1d8dd8] text-black"
                                             >
                                                 Go to Cart
                                             </button>

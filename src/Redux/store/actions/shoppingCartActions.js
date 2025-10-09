@@ -36,3 +36,28 @@ export const addCartItem = (item) => (dispatch, getState) => {
     dispatch(setCart(updatedCart));
 };
 
+export const removeCartItem = (itemId) => (dispatch, getState) => {
+    const { cart } = getState().shoppingCart;
+    const updatedCart = cart.filter((item) => item.id !== itemId);
+    dispatch(setCart(updatedCart));
+};
+
+export const increaseCartItem = (itemId) => (dispatch, getState) => {
+    const { cart } = getState().shoppingCart;
+    const updatedCart = cart.map((item) =>
+        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    dispatch(setCart(updatedCart));
+};
+
+export const decreaseCartItem = (itemId) => (dispatch, getState) => {
+    const { cart } = getState().shoppingCart;
+    const updatedCart = cart.map((item) =>
+        item.id === itemId && item.quantity > 1
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+    );
+    dispatch(setCart(updatedCart));
+};
+
+
