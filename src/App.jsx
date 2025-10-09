@@ -18,14 +18,14 @@ function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
+          <Route path="/shop/:gender/:categoryName/:categoryId/:productNameSlug/:productId">
+            <ProductDetailPage />
+          </Route>
           <Route path="/shop">
             <ShopPage />
           </Route>
           <Route path="/contact">
             <ContactPage />
-          </Route>
-          <Route path="/product">
-            <ProductDetailPage />
           </Route>
           <Route path="/about">
             <AboutPage />

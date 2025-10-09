@@ -1,4 +1,4 @@
-import { SET_CATEGORIES, SET_PRODUCT_LIST, SET_TOTAL, SET_LIMIT, SET_OFFSET, SET_FILTER, SET_FETCH_STATE } from '../actions/productActions';
+import { SET_CATEGORIES, SET_PRODUCT_LIST, SET_TOTAL, SET_LIMIT, SET_OFFSET, SET_FILTER, SET_FETCH_STATE,SET_PRODUCT } from '../actions/productActions';
 
 const initialState = {
     categories: [],
@@ -47,6 +47,22 @@ function productReducer(state = initialState, action) {
                 ...state,
                 fetchState: action.payload
             };
+        case SET_PRODUCT:
+            const existingIndex = state.productList.findIndex(
+                (p) => p.id === action.payload.id
+            );
+            let updatedList;
+            if (existingIndex >= 0) {
+                updatedList = [...state.productList];
+                updatedList[existingIndex] = action.payload;
+            } else {
+                updatedList = [...state.productList, action.payload];
+            }
+            return {
+                ...state,
+                productList: updatedList,
+            };
+
         default:
             return state;
     }

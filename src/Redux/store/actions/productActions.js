@@ -1,5 +1,4 @@
 import axios from "axios";
-import { set } from "react-hook-form";
 
 export const SET_CATEGORIES = "SET_CATEGORIES";
 export const SET_PRODUCT_LIST = "SET_PRODUCT_LIST";
@@ -8,6 +7,7 @@ export const SET_LIMIT = "SET_LIMIT";
 export const SET_OFFSET = "SET_OFFSET";
 export const SET_FILTER = "SET_FILTER";
 export const SET_FETCH_STATE = "SET_FETCH_STATE";
+export const SET_PRODUCT = "SET_PRODUCT";
 
 const BASE_URL = "https://workintech-fe-ecommerce.onrender.com";
 
@@ -44,6 +44,11 @@ export const setFilter = (filter) => ({
 export const setFetchState = (fetchState) => ({
     type: SET_FETCH_STATE,
     payload: fetchState
+});
+
+export const setProduct = (product) => ({
+    type: SET_PRODUCT,
+    payload: product
 });
 
 export const fetchCategories = () => (dispatch) => {
@@ -88,3 +93,17 @@ export const fetchProductsByCategory = (categoryId) => (dispatch) => {
         });
 }
 */
+
+export const fetchProductById = (productId) => (dispatch) => {
+    dispatch(setFetchState("FETCHING"));
+    axios.get(`${BASE_URL}/products/${productId}`)
+        .then((response) => {
+            dispatch(setProduct(response.data));
+            dispatch(setFetchState("FETCHED"));
+            return response.data;
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            dispatch(setFetchState("ERROR"));
+        });
+}

@@ -1,7 +1,16 @@
+import { useEffect, useState } from "react";
 import image from "/assets/productdetailpage/Description/image.jpg";
 import { ChevronRight } from "lucide-react";
 
-function ProductDescription() {
+function ProductDescription({ productDetail }) {
+    const [image, setImage] = useState("");
+
+    useEffect(() => {
+        if (productDetail?.images?.length) {
+            setImage(productDetail.images[0].url);
+        }
+    }, [productDetail]);
+
     return (
         <div>
             <div className="font-montserrat font-semibold text-[#737373] text-sm flex md:border-b gap-2 md:gap-12 justify-center py-8 mx-0 md:mx-[200px]">
@@ -11,7 +20,7 @@ function ProductDescription() {
             </div>
             <div className="flex gap-[50px] md:gap-[30px] md:mx-[200px] mx-10 justify-between py-10 flex-col md:flex-row">
                 <div className="drop-shadow-[1rem_1rem_10px_rgba(0,0,0,0.5)]">
-                    <img src={image} alt="Product" />
+                    <img src={image} alt="Product" className="w-[316px] h-[372px] object-cover object-top" />
                 </div>
                 <div className="flex flex-col w-full md:w-[33%] gap-[30px]">
                     <h3 className="font-bold text-2xl text-[#252B42]">the quick fox jumps over </h3>
