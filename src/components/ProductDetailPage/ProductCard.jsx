@@ -4,8 +4,10 @@ import { Star, Heart, ShoppingCart, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductById } from "../../Redux/store/actions/productActions";
+import { addCartItem } from "../../Redux/store/actions/shoppingCartActions";
 
 function ProductCard({ productDetail }) {
+    const dispatch = useDispatch();
     const history = useHistory();
     const [mainImage, setMainImage] = useState("");
 
@@ -14,6 +16,10 @@ function ProductCard({ productDetail }) {
             setMainImage(productDetail.images[0].url);
         }
     }, [productDetail]);
+
+    const handleAddToCart = () => {
+        dispatch(addCartItem(productDetail));
+    };
 
     return (
         <div className="font-montserrat px-10 md:px-[200px] bg-[#FAFAFA] pb-12">
@@ -68,7 +74,9 @@ function ProductCard({ productDetail }) {
                                 <Heart className="w-4 h-4 text-[#252B42]" />
                             </div>
                             <div className="p-2 bg-white border border-[#BDBDBD] rounded-full">
-                                <ShoppingCart className="w-4 h-4 text-[#252B42]" />
+                                <ShoppingCart 
+                                onClick={handleAddToCart}
+                                className="w-4 h-4 text-[#252B42] cursor-pointer hover:text-[#23A6F0]" />
                             </div>
                             <div className="p-2 bg-white border border-[#BDBDBD] rounded-full">
                                 <Eye className="w-4 h-4 text-[#252B42]" />

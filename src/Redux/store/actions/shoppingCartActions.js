@@ -16,3 +16,23 @@ export const setAddress = (address) => ({
     type: SET_ADDRESS,
     payload: address
 });
+
+export const addCartItem = (item) => (dispatch, getState) => {
+    const { cart } = getState().shoppingCart;
+
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+
+    let updatedCart;
+    if (existingItem) {
+        updatedCart = cart.map((cartItem) =>
+            cartItem.id === item.id
+                ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                : cartItem
+        );
+    } else {
+        updatedCart = [...cart, { ...item, quantity: 1 }];
+    }
+
+    dispatch(setCart(updatedCart));
+};
+
